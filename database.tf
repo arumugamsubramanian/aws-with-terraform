@@ -5,19 +5,19 @@ resource "aws_db_subnet_group" "db_subnet"  {
 }
 
 # Create database instance
-resource "aws_db_instance" "project_db" {
-  allocated_storage    = 5
-  engine               = "mysql"
-  engine_version       = "5.7"
-  instance_class       = "db.t3.micro"
-  identifier           = "db-instance"
-  db_name              = "sqldatabase"
-  username             = "admin"
-  password             = "password"
-  db_subnet_group_name = aws_db_subnet_group.db_subnet.id
-  vpc_security_group_ids = [aws_security_group.rds_sg.id]
-  publicly_accessible = false
-  skip_final_snapshot  = true
-  multi_az = true
-}
+# resource "aws_db_instance" "project_db" {
+#   allocated_storage    = 5
+#   engine               = "mysql"
+#   engine_version       = "5.7"
+#   instance_class       = "db.t3.micro"
+#   identifier           = "db-instance"
+#   db_name              = "sqldatabase"
+#   username             = "admin"
+#   password             = "password"
+#   db_subnet_group_name = aws_db_subnet_group.db_subnet.id
+#   vpc_security_group_ids = [aws_security_group.rds_sg.id]
+#   publicly_accessible = false
+#   skip_final_snapshot  = true
+#   multi_az = true
+# }
 
