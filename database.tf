@@ -27,7 +27,7 @@ resource "aws_db_instance" "postgres" {
     allocated_storage       = 20  # Storage in GB
     max_allocated_storage   = 100 # Auto-scaling limit
     engine                 = "postgres"
-    engine_version         = "14.3"
+    engine_version         = "14.17"
     instance_class         = "db.t3.micro"  # Change based on needs
     username              = "adminuser"
     password              = "StrongPassword123!"  # Change this securely
