@@ -22,25 +22,25 @@ resource "aws_db_subnet_group" "db_subnet"  {
 # }
 
 # Create a PostgreSQL RDS Instance
-resource "aws_db_instance" "postgres" {
-    identifier              = "my-postgres-db"
-    allocated_storage       = 20  # Storage in GB
-    max_allocated_storage   = 100 # Auto-scaling limit
-    engine                 = "postgres"
-    engine_version         = "14.17"
-    instance_class         = "db.t3.micro"  # Change based on needs
-    username              = "adminuser"
-    password              = "StrongPassword123!"  # Change this securely
-    parameter_group_name  = "default.postgres14"
-    publicly_accessible   = false
-    db_subnet_group_name = aws_db_subnet_group.db_subnet.id
-    vpc_security_group_ids = [aws_security_group.rds_sg.id]
-    skip_final_snapshot    = true
-    multi_az              = false
-    storage_encrypted     = true
-
-    tags = {
-        Name = "MyPostgresDB"
-        Environment = "dev"
-    }
-}
+# resource "aws_db_instance" "postgres" {
+#     identifier              = "my-postgres-db"
+#     allocated_storage       = 20  # Storage in GB
+#     max_allocated_storage   = 100 # Auto-scaling limit
+#     engine                 = "postgres"
+#     engine_version         = "14.17"
+#     instance_class         = "db.t3.micro"  # Change based on needs
+#     username              = "adminuser"
+#     password              = "StrongPassword123!"  # Change this securely
+#     parameter_group_name  = "default.postgres14"
+#     publicly_accessible   = false
+#     db_subnet_group_name = aws_db_subnet_group.db_subnet.id
+#     vpc_security_group_ids = [aws_security_group.rds_sg.id]
+#     skip_final_snapshot    = true
+#     multi_az              = false
+#     storage_encrypted     = true
+#
+#     tags = {
+#         Name = "MyPostgresDB"
+#         Environment = "dev"
+#     }
+# }
