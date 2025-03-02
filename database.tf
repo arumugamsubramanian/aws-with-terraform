@@ -23,7 +23,7 @@ resource "aws_db_subnet_group" "db_subnet"  {
 
 # Create a PostgreSQL RDS Instance
 resource "aws_db_instance" "postgres" {
-    identifier              = "my-postgres-db"
+    identifier              = "ace-postgres-db"
     allocated_storage       = 20  # Storage in GB
     max_allocated_storage   = 100 # Auto-scaling limit
     engine                 = "postgres"
@@ -40,7 +40,7 @@ resource "aws_db_instance" "postgres" {
     storage_encrypted     = true
 
     tags = {
-        Name = "MyPostgresDB"
+        Name = "ace-postgres-db"
         Environment = "dev"
     }
 }
