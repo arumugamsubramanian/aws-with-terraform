@@ -7,7 +7,7 @@ module "ec2-security-group" {
 ## Creating Launch templates
 resource "aws_launch_template" "webtier-launch-template" {
   name = "webtier-launch-template"
-  description = "My Web tier Launch Template"
+  description = "ACE Web tier Launch Template"
   image_id = var.ec2_ami
   instance_type = var.instance_type
   vpc_security_group_ids = [module.ec2-security-group.ec2-sg-id]
@@ -16,7 +16,7 @@ resource "aws_launch_template" "webtier-launch-template" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name = "asg_instances"
+      Name = "ace_infra_instances"
     }
   }
 
